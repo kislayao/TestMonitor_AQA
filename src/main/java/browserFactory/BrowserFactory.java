@@ -1,11 +1,23 @@
+package browserFactory;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.config.DriverManagerType;
 
 import java.time.Duration;
 
 public class BrowserFactory {
 
     private WebDriver driver = null;
+    private DriverManagerType driverManagerType = null;
+
+    public BrowserFactory(){
+        driverManagerType = DriverManagerType.CHROME;
+        WebDriverManager.chromedriver().driverVersion("114.0.573.98");
+        driver = new ChromeDriver(getChromeOptions());
+    }
 
 
     public WebDriver getDriver() {
@@ -26,7 +38,7 @@ public class BrowserFactory {
         chromeOptions.addArguments("--silent");
         chromeOptions.addArguments("--start-maximized");
         chromeOptions.addArguments("--incognito");
-        chromeOptions.addArguments("--headless=new");
+        //chromeOptions.addArguments("--headless=new"); предлагаю удалить, с этой сторокой тесты запускаются без визуальной части
 
         return chromeOptions;
     }
