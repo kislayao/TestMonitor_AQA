@@ -38,7 +38,6 @@ public class BrowserFactory {
         chromeOptions.addArguments("--silent");
         chromeOptions.addArguments("--start-maximized");
         chromeOptions.addArguments("--incognito");
-        //chromeOptions.addArguments("--headless=new"); предлагаю удалить, с этой сторокой тесты запускаются без визуальной части
 
         return chromeOptions;
     }
