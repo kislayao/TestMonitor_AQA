@@ -20,6 +20,10 @@ public class ReadProperties {
         return properties.getProperty("url");
     }
 
+    public static String browserName() {
+        return properties.getProperty("browser");
+    }
+
     public static String email() {
         return properties.getProperty("email");
     }
