@@ -18,8 +18,6 @@ public class GetListOfAllProjectsTest extends BaseApiTest{
     @Test
     public void getAllProjectsTest(){
 
-        Gson gson = new Gson();
-
         String endpoint = "/api/v1/projects";
 
         Response response = given()
@@ -30,8 +28,6 @@ public class GetListOfAllProjectsTest extends BaseApiTest{
                 .statusCode(HttpStatus.SC_OK)
                 .extract()
                 .response();
-
-//        Project[] actualProjects = gson.fromJson(response.getBody().asString(), Project[].class);
 
     }
 }
