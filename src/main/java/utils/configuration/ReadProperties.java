@@ -40,5 +40,9 @@ public class ReadProperties {
         return Integer.parseInt(properties.getProperty("timeout"));
     }
 
+    public static String getToken(){
+        return properties.getProperty("token");
+    }
+
 }
 
