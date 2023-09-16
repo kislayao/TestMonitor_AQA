@@ -21,6 +21,9 @@ public class LoginPage extends BasePage {
     @FindBy (className = "button")
     public WebElement loginButton;
 
+    @FindBy (className = "message-body")
+    public WebElement errorMessage;
+
     // Блок инициализации
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -37,6 +40,12 @@ public class LoginPage extends BasePage {
     public void login(User user) {
         emailInput.sendKeys(user.getEmail());
         passwordInput.sendKeys(user.getPassword());
+        loginButton.submit();
+    }
+
+    public void login(String email, String password) {
+        emailInput.sendKeys(email);
+        passwordInput.sendKeys(password);
         loginButton.submit();
     }
 
