@@ -21,7 +21,6 @@ public class Project {
     private String name;
     private String description;
 
-    @EqualsAndHashCode.Exclude
     @SerializedName(value = "symbol_id")
     @JsonProperty("symbol_id")
     private int symbolId;
