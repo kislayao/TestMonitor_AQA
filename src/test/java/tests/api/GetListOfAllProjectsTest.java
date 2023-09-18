@@ -1,9 +1,7 @@
 package tests.api;
 
 import baseEntities.BaseApiTest;
-import com.google.gson.Gson;
 import io.restassured.response.Response;
-import models.Project;
 import org.apache.http.HttpStatus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

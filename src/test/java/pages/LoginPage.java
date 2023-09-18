@@ -1,7 +1,7 @@
 package pages;
 
 import baseEntities.BasePage;
-import models.User;
+import models.LoginUser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -37,9 +37,9 @@ public class LoginPage extends BasePage {
     // Блок атомарных методов
 
     // Блок комплексных методов
-    public void login(User user) {
-        emailInput.sendKeys(user.getEmail());
-        passwordInput.sendKeys(user.getPassword());
+    public void login(LoginUser loginUser) {
+        emailInput.sendKeys(loginUser.getEmail());
+        passwordInput.sendKeys(loginUser.getPassword());
         loginButton.submit();
     }
 
