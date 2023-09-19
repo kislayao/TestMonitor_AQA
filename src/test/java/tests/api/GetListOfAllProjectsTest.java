@@ -12,7 +12,6 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.json.TypeToken;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.io.FileNotFoundException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
