@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import services.WaitService;
 
 public class UsersPage extends BasePage {
+
     private final static String pagePath = "/settings/users";
 
     public UsersPage(WebDriver driver) {
