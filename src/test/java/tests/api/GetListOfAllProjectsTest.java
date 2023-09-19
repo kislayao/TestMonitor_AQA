@@ -18,6 +18,7 @@ public class GetListOfAllProjectsTest extends BaseApiTest{
 
         String endpoint = "/api/v1/projects";
 
+
         Response response = given()
                 .when()
                 .get(endpoint)
