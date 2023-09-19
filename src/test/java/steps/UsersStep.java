@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.AddUserPage;
+import pages.SettingsPage;
+import pages.UsersPage;
 import services.WaitService;
 
 import java.util.List;

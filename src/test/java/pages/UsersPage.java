@@ -17,18 +17,22 @@ public class UsersPage extends BasePage {
     }
 
     @FindBy(xpath = "//div[2]/div/button")
-    public WebElement buttonAddUser;
+    public WebElement addUserButton;
 
     @Override
     protected By getPageIdentifier() {
         return By.xpath("//div[2]/div/button");
     }
 
+    public void openPageByUrl() {
+        super.openPageByUrl(pagePath);
+    }
+
     public void clickAddUserButton() {
         WaitService waitService = new WaitService(driver);
         Actions actions = new Actions(driver);
         actions
-                .click(waitService.waitForVisibility(buttonAddUser))
+                .click(waitService.waitForVisibility(addUserButton))
                 .build()
                 .perform();
     }

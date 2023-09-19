@@ -14,7 +14,7 @@ public class UploadTest extends BaseTest {
     public void uploadFileTest() {
         loginStep.successLogin(DataHelper.getUserToLogin());
 
-        driver.get("https://vka.testmonitor.com/settings/users/3");
+        driver.get("https://vka.testmonitor.com/settings/users/1");
 
         WaitService waitService = new WaitService(driver);
 

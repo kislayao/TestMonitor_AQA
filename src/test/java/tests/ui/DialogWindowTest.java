@@ -10,9 +10,9 @@ public class DialogWindowTest extends BaseTest {
     @Test
     public void displayedDialogWindowTest() {
         loginStep.successLogin(DataHelper.getUserToLogin());
-        addingUserStep.addingProjectSettings().clickToUsersMenuLabel();
-        addingUserStep.addingUser().clickAddUserButton();
+        addUserStep.addingProjectSettings().clickToUsersMenuLabel();
+        addUserStep.addingUser().clickAddUserButton();
 
-        Assert.assertTrue(addingUserStep.openUserForm().isPageOpened());
+        Assert.assertTrue(addUserStep.openUserForm().isPageOpened());
     }
 }

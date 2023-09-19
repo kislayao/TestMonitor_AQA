@@ -27,7 +27,6 @@ public class AddUserPage extends BasePage {
     @FindBy(xpath = "//button/span[contains(text(), 'Add')]")
     public WebElement addButton;
 
-
     public AddUserPage(WebDriver driver) {
         super(driver);
     }
