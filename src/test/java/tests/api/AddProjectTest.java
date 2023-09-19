@@ -22,6 +22,7 @@ import static io.restassured.RestAssured.given;
 public class AddProjectTest extends BaseApiTest {
 
     static Logger logger = LogManager.getLogger(AddProjectTest.class);
+    private Project actualProject;
 
     private static String checkOperateSystemAndSendPathToFile() {
         String pathToFile;
@@ -33,6 +34,10 @@ public class AddProjectTest extends BaseApiTest {
             pathToFile = AddProjectTest.class.getClassLoader().getResource("expectedProject.json").getPath();
         }
         return pathToFile;
+    }
+
+    public Project getActualProject() {
+        return actualProject;
     }
 
     @Test
@@ -59,10 +64,10 @@ public class AddProjectTest extends BaseApiTest {
         JsonObject respAsJsonObject = gson.fromJson(response.getBody().asString(), JsonObject.class);
         JsonElement respAsJsonElement = respAsJsonObject.getAsJsonObject("data");
 
-        Project actualProject = gson.fromJson(respAsJsonElement, Project.class);
+        actualProject = gson.fromJson(respAsJsonElement, Project.class);
 
-        System.out.println("Actual " + actualProject.toString());
-        System.out.println("Expected " + expectedProject.toString());
+        logger.info("Actual project: " + actualProject.toString());
+        logger.info("Expected project: " + expectedProject.toString());
 
         Assert.assertTrue(expectedProject.equals(actualProject));
 
