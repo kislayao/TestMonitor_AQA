@@ -7,19 +7,22 @@ import utils.configuration.ReadProperties;
 public class DataHelper {
 
     public static LoginUser getUserToLogin() {
-        LoginUser user = new LoginUser();
-        user.setEmail(ReadProperties.email());
-        user.setPassword(ReadProperties.password());
+        LoginUser user = LoginUser.builder()
+                .email(ReadProperties.email())
+                .password(ReadProperties.password())
+                .build();
         return user;
     }
 
     public static User getUserToAdd() {
-        User user = new User();
-        user.setFirstName(FakerHelper.faker.name().firstName());
-        user.setLastName(FakerHelper.faker.name().lastName());
-        user.setEmail(FakerHelper.faker.internet().emailAddress());
-        user.setPassword("Qwe123asd!");
-        user.setConfirmPassword("Qwe123asd!");
+        User user = User.builder()
+                .firstName(FakerHelper.faker.name().firstName())
+                .lastName(FakerHelper.faker.name().lastName())
+                .email(FakerHelper.faker.internet().emailAddress())
+                .password("Qwe123asd!")
+                .confirmPassword("Qwe123asd!")
+                .build();
+
         return user;
     }
 
