@@ -1,10 +1,10 @@
 package models;
 
-import com.github.javafaker.Faker;
-import helper.FakerHelper;
-import lombok.Data;
+import lombok.*;
 
 @Data
+@Builder
+
 public class User {
 
     private String firstName;
