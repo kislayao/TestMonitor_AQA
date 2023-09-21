@@ -36,6 +36,12 @@ public class AddUserPage extends BasePage {
         return By.className("modal-card-title");
     }
 
+    public WebElement getFirstNameInput() {
+        return  driver.findElement(By.xpath("//div/input[@name='first_name']"));
+    }
+    public void setFirstNameInput(String value) {
+        getFirstNameInput().sendKeys(value);
+    }
     public void addUser(User user) {
         firstNameInput.sendKeys(user.getFirstName());
         lastNameInput.sendKeys(user.getLastName());
