@@ -14,6 +14,8 @@ public class BaseStep {
     protected AddUserPage addUserPage;
     protected TeamsPage teamsPage;
     protected AddTeamPage addTeamPage;
+    protected UserProfilePage userProfilePage;
+    protected ConfirmDeleteUserPage confirmDeleteUserPage;
 
     public BaseStep (WebDriver driver){
         this.driver = driver;
@@ -25,5 +27,7 @@ public class BaseStep {
         addUserPage = new AddUserPage(driver);
         teamsPage = new TeamsPage(driver);
         addTeamPage = new AddTeamPage(driver);
+        userProfilePage = new UserProfilePage(driver);
+        confirmDeleteUserPage = new ConfirmDeleteUserPage(driver);
     }
 }

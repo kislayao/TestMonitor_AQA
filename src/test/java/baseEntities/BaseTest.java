@@ -6,10 +6,7 @@ import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
-import steps.AddUserStep;
-import steps.LoginStep;
-import steps.TeamsStep;
-import steps.UsersStep;
+import steps.*;
 import utils.configuration.ReadProperties;
 
 @Listeners(InvokedListener.class)
@@ -20,6 +17,8 @@ public class BaseTest {
     protected UsersStep usersStep;
     protected AddUserStep addUserStep;
     protected TeamsStep teamsStep;
+    protected UserProfileStep userProfileStep;
+    protected ConfirmDeleteUserStep confirmDeleteUserStep;
 
     @BeforeMethod
     public void setUp(ITestContext iTestContext) {
@@ -30,6 +29,8 @@ public class BaseTest {
         loginStep = new LoginStep(driver);
         usersStep = new UsersStep(driver);
         addUserStep = new AddUserStep(driver);
+        userProfileStep = new UserProfileStep(driver);
+        confirmDeleteUserStep = new ConfirmDeleteUserStep(driver);
         teamsStep = new TeamsStep(driver);
         driver.get(ReadProperties.getUrl());
     }
