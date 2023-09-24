@@ -19,6 +19,9 @@ public class SettingsPage extends BasePage {
     @FindBy(xpath = "//ul[3]/li/ul/li[1]/a")
     public WebElement usersMenuLabel;
 
+    @FindBy(xpath = "//ul[3]/li/ul/li[2]/a")
+    public WebElement teamsMenuLabel;
+
     @Override
     protected By getPageIdentifier() {
         return By.cssSelector("h1.title");
@@ -26,5 +29,9 @@ public class SettingsPage extends BasePage {
 
     public void clickToUsersMenuLabel() {
         usersMenuLabel.click();
+    }
+
+    public void clickToTeamsMenuLabel() {
+        teamsMenuLabel.click();
     }
 }

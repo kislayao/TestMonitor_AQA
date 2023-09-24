@@ -16,6 +16,7 @@ public class BaseTest {
     protected LoginStep loginStep;
     protected UsersStep usersStep;
     protected AddUserStep addUserStep;
+    protected TeamsStep teamsStep;
     protected UserProfileStep userProfileStep;
     protected ConfirmDeleteUserStep confirmDeleteUserStep;
 
@@ -30,6 +31,7 @@ public class BaseTest {
         addUserStep = new AddUserStep(driver);
         userProfileStep = new UserProfileStep(driver);
         confirmDeleteUserStep = new ConfirmDeleteUserStep(driver);
+        teamsStep = new TeamsStep(driver);
         driver.get(ReadProperties.getUrl());
     }
 

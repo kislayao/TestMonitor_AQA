@@ -12,6 +12,8 @@ public class BaseStep {
     protected SettingsPage settingsPage;
     protected UsersPage usersPage;
     protected AddUserPage addUserPage;
+    protected TeamsPage teamsPage;
+    protected AddTeamPage addTeamPage;
     protected UserProfilePage userProfilePage;
     protected ConfirmDeleteUserPage confirmDeleteUserPage;
 
@@ -23,6 +25,8 @@ public class BaseStep {
         settingsPage = new SettingsPage(driver);
         usersPage = new UsersPage(driver);
         addUserPage = new AddUserPage(driver);
+        teamsPage = new TeamsPage(driver);
+        addTeamPage = new AddTeamPage(driver);
         userProfilePage = new UserProfilePage(driver);
         confirmDeleteUserPage = new ConfirmDeleteUserPage(driver);
     }
