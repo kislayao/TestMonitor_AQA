@@ -2,19 +2,25 @@ package tests.ui;
 
 import baseEntities.BaseTest;
 import helper.DataHelper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+import pages.UsersPage;
 import services.WaitService;
 
 public class UploadTest extends BaseTest {
+    static Logger logger = LogManager.getLogger(UploadTest.class);
 
     @Test
     public void uploadFileTest() {
         loginStep.successLogin(DataHelper.getUserToLogin());
 
-        driver.get("https://vka.testmonitor.com/settings/users/1");
+        UsersPage usersPage = new UsersPage(driver);
+        usersPage.openPageByUrl();
+        usersPage.clickDetailsAboutUserButton();
 
         WaitService waitService = new WaitService(driver);
 
@@ -24,9 +30,11 @@ public class UploadTest extends BaseTest {
         try {
             fileUploadElement.sendKeys(pathToFile.substring(1, pathToFile.length()));
         } catch (NoSuchElementException e) {
-            System.out.println("File isn't found.");
+            logger.error("File isn't found.");
         }
 
         waitService.waitForVisibilityLocatedBy(By.cssSelector("img.is-rounded")).click();
+
+        logger.info("File is uploaded.");
     }
 }
