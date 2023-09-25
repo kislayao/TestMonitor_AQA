@@ -11,7 +11,6 @@ import org.openqa.selenium.support.FindBy;
 import services.WaitService;
 
 public class UsersPage extends BasePage {
-
     static Logger logger = LogManager.getLogger(UsersPage.class);
 
     private final static String pagePath = "/settings/users";
@@ -23,6 +22,9 @@ public class UsersPage extends BasePage {
     @FindBy(xpath = "//div[2]/div/button")
     public WebElement addUserButton;
 
+    @FindBy(xpath = "//td[4]/div/a[contains(@href, 'users/1')]")
+    public WebElement detailsAboutUserButton;
+
     @Override
     protected By getPageIdentifier() {
         return By.xpath("//div[2]/div/button");
@@ -33,9 +35,17 @@ public class UsersPage extends BasePage {
         logger.info("Users page is opened");
     }
 
+    WaitService waitService = new WaitService(driver);
+    Actions actions = new Actions(driver);
+
+    public void clickDetailsAboutUserButton() {
+        actions
+                .click(waitService.waitForVisibility(detailsAboutUserButton))
+                .build()
+                .perform();
+    }
+
     public void clickAddUserButton() {
-        WaitService waitService = new WaitService(driver);
-        Actions actions = new Actions(driver);
         actions
                 .click(waitService.waitForVisibility(addUserButton))
                 .build()
