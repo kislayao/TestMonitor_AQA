@@ -18,7 +18,7 @@ import java.util.List;
 public class BoundaryValueTest extends BaseTest {
     static Logger logger = LogManager.getLogger(BoundaryValueTest.class);
 
-    @Test
+    @Test(groups = "positive tests", priority = 1)
     public void successBoundaryValueTest() {
         loginStep.successLogin(DataHelper.getUserToLogin());
 
@@ -57,7 +57,7 @@ public class BoundaryValueTest extends BaseTest {
         }
     }
 
-    @Test
+    @Test(groups = "negative tests", priority = 2)
     public void negativeBoundaryValueTest() {
         loginStep.successLogin(DataHelper.getUserToLogin());
 

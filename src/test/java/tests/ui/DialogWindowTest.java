@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class DialogWindowTest extends BaseTest {
     static Logger logger = LogManager.getLogger(DialogWindowTest.class);
 
-    @Test
+    @Test(groups = "positive tests")
     public void displayedDialogWindowTest() {
         loginStep.successLogin(DataHelper.getUserToLogin());
         addUserStep.addingProjectSettings().clickToUsersMenuLabel();
