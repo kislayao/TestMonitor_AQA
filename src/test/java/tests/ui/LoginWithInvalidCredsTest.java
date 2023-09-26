@@ -12,7 +12,7 @@ public class LoginWithInvalidCredsTest extends BaseTest {
 
     static Logger logger = LogManager.getLogger(LoginWithInvalidCredsTest.class);
 
-    @Test
+    @Test(groups = "negative tests")
     public void failLoginTest() {
 
         Assert.assertEquals(loginStep.negativeLogin(ReadProperties.email(), "12345U")

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Main Suite">
+    <test name="Smoke">
+        <groups>
+            <define name="Group_1">
+                <include name="positive tests"/>
+            </define>
+            <define name="Group_2">
+                <include name="negative tests"/>
+            </define>
+            <run>
+                <include name="Group_1"/>
+                <include name="Group_2"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.ui.AddUserTest"/>
+            <class name="tests.ui.DeleteUserTest"/>
+            <class name="tests.ui.DialogWindowTest"/>
+            <class name="tests.ui.TooltipTest"/>
+            <class name="tests.ui.UploadTest"/>
+            <class name="tests.ui.BoundaryValueTest"/>
+            <class name="tests.ui.LoginWithInvalidCredsTest"/>
+        </classes>
+    </test>
+</suite>

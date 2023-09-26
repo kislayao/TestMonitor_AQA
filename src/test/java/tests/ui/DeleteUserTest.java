@@ -8,7 +8,7 @@ import pages.UsersPage;
 
 public class DeleteUserTest extends BaseTest {
 
-    @Test (description = "Delete user test")
+    @Test (description = "Delete user test", groups = "positive tests")
     public void deleteUser() throws InterruptedException {
 
         loginStep.successLogin(DataHelper.getUserToLogin());

@@ -8,7 +8,7 @@ import pages.UsersPage;
 
 public class AddUserTest extends BaseTest {
 
-    @Test
+    @Test(groups = "positive tests")
     public void addUser() throws InterruptedException {
 
         loginStep.successLogin(DataHelper.getUserToLogin());

@@ -18,7 +18,7 @@ import java.util.List;
 public class TooltipTest extends BaseTest {
     static Logger logger = LogManager.getLogger(TooltipTest.class);
 
-    @Test
+    @Test(testName = "Tooltip display test.", groups = "positive tests")
     public void tooltipTest() {
         loginStep.successLogin(DataHelper.getUserToLogin());
 

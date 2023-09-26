@@ -14,7 +14,7 @@ import services.WaitService;
 public class UploadTest extends BaseTest {
     static Logger logger = LogManager.getLogger(UploadTest.class);
 
-    @Test
+    @Test(description = "The image is loaded into the user's form.", groups = "positive tests")
     public void uploadFileTest() {
         loginStep.successLogin(DataHelper.getUserToLogin());
 
