@@ -29,7 +29,7 @@ public class BoundaryValueTest extends BaseTest {
         teamsStep.openAddTeamModel();
 
         AddTeamPage addTeamPage = new AddTeamPage(driver);
-        WebElement input = addTeamPage.getNameOfTeamInput();
+        WebElement input = addTeamPage.nameOfTeamInput;
 
         List<String> namesOfTeamsList = new ArrayList<>();
         namesOfTeamsList.add("1");

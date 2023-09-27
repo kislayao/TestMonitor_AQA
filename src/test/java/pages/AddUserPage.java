@@ -40,10 +40,6 @@ public class AddUserPage extends BasePage {
         return  driver.findElement(By.xpath("//div/input[@name='first_name']"));
     }
 
-    public void setFirstNameInput(String value) {
-        getFirstNameInput().sendKeys(value);
-    }
-
     public void addUser(User user) {
         firstNameInput.sendKeys(user.getFirstName());
         lastNameInput.sendKeys(user.getLastName());
@@ -52,5 +48,4 @@ public class AddUserPage extends BasePage {
         confirmPasswordInput.sendKeys(user.getConfirmPassword());
         addButton.click();
     }
-
 }
