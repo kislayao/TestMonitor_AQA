@@ -10,10 +10,10 @@ import org.testng.annotations.Test;
 
 public class FailedOnPurposeTest extends BaseTest {
 
-//    @Test (description = "Failed on purpose test")
-//    @Description("This test if failed on purpose")
-//    @Severity(SeverityLevel.MINOR)
-//    public void failedTest(){
-//        Assert.assertFalse(loginStep.successLogin(DataHelper.getUserToLogin()).isPageOpened());
-//    }
+    @Test (description = "Failed on purpose test")
+    @Description("This test if failed on purpose")
+    @Severity(SeverityLevel.MINOR)
+    public void failedTest(){
+        Assert.assertFalse(loginStep.successLogin(DataHelper.getUserToLogin()).isPageOpened());
+    }
 }
