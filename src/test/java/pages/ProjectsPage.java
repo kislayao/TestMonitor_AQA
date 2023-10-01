@@ -17,7 +17,7 @@ public class ProjectsPage extends BasePage {
         settingsPage = new SettingsPage(driver);
     }
 
-    @FindBy(xpath = "//div[@class = 'navbar-end']/a[1]")
+    @FindBy(xpath = "//*[@id='navMenu']/div[2]/a")
     public WebElement settingsLink;
 
     @FindBy(xpath = "//a[contains(@href, 'projects/1')]")
