@@ -25,4 +25,16 @@ public class ProjectAdapter {
                 .response();
     }
 
+    public Response getAllProjects() {
+
+        String endpoint = "/api/v1/projects";
+
+        return given()
+                .get(endpoint)
+                .then()
+                .log().body()
+                .extract()
+                .response();
+    }
+
 }
