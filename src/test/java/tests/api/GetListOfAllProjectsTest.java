@@ -23,7 +23,6 @@ public class GetListOfAllProjectsTest extends BaseApiTest {
 
     static Logger logger = LogManager.getLogger(GetListOfAllProjectsTest.class);
 
-
     @Test
     public void getAllProjectsTest() throws FileNotFoundException {
 
