@@ -38,13 +38,6 @@ public class UsersPage extends BasePage {
     WaitService waitService = new WaitService(driver);
     Actions actions = new Actions(driver);
 
-    public void clickDetailsAboutUserButton() {
-        actions
-                .click(waitService.waitForVisibility(detailsAboutUserButton))
-                .build()
-                .perform();
-    }
-
     public void clickAddUserButton() {
         actions
                 .click(waitService.waitForVisibility(addUserButton))

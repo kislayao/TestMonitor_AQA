@@ -13,13 +13,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utils.configuration.ReadProperties;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.specification.ProxySpecification.auth;
 
 public class AddProjectTest extends BaseApiTest {
 
@@ -29,7 +27,6 @@ public class AddProjectTest extends BaseApiTest {
     private static String checkOperateSystemAndSendPathToFile() {
         String pathToFile;
         if (SystemUtils.IS_OS_WINDOWS) {
-            System.out.println("Windows Operating System");
             pathToFile = AddProjectTest.class.getClassLoader().getResource("expectedProject.json").getPath()
                     .replace("/", "\\").substring(1);
         } else {
