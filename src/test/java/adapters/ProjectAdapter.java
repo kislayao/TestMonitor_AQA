@@ -4,6 +4,7 @@ import io.restassured.mapper.ObjectMapperType;
 import io.restassured.response.Response;
 import models.Project;
 import org.apache.http.HttpStatus;
+import utils.Endpoints;
 
 import static io.restassured.RestAssured.given;
 
@@ -11,13 +12,11 @@ public class ProjectAdapter {
 
     public Response add(Project expectedProject) {
 
-        String endpoint = "/api/v1/projects";
-
         return given()
                 .body(expectedProject, ObjectMapperType.GSON)
                 .log().all()
                 .when()
-                .post(endpoint)
+                .post(Endpoints.ADD_PROJECT)
                 .then()
                 .log().body()
                 .statusCode(HttpStatus.SC_CREATED)
@@ -27,10 +26,8 @@ public class ProjectAdapter {
 
     public Response getAllProjects() {
 
-        String endpoint = "/api/v1/projects";
-
         return given()
-                .get(endpoint)
+                .get(Endpoints.GET_PROJECTS)
                 .then()
                 .log().body()
                 .extract()
