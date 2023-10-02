@@ -1,6 +1,5 @@
 package adapters;
 
-import com.google.gson.Gson;
 import io.restassured.mapper.ObjectMapperType;
 import io.restassured.response.Response;
 import models.Project;
