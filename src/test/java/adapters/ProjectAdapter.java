@@ -34,4 +34,17 @@ public class ProjectAdapter {
                 .response();
     }
 
+    public Response getProject() {
+        int projectID = 1200;
+
+        return given()
+                .pathParam("projectId", projectID)
+                .log().all()
+                .get(Endpoints.GET_PROJECT)
+                .then()
+                .log().status()
+                .statusCode(HttpStatus.SC_NOT_FOUND)
+                .extract()
+                .response();
+  }
 }

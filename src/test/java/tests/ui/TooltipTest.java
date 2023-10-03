@@ -41,7 +41,7 @@ public class TooltipTest extends BaseTest {
                 .perform();
 
         Assert.assertTrue(waitService.waitForVisibilityLocatedBy(By.xpath
-                ("//div[2]/div/div[contains(text(), 'Chrome')]")).isDisplayed());
+                ("//*[@class='tooltip-content' and contains(text(), 'Chrome')]")).isDisplayed());
         logger.info("The tooltip about environment is displayed.");
     }
 }
