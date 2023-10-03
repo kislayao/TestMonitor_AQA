@@ -4,6 +4,9 @@ import models.LoginUser;
 import models.User;
 import utils.configuration.ReadProperties;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DataHelper {
 
     public static LoginUser getUserToLogin() {
@@ -26,4 +29,16 @@ public class DataHelper {
         return user;
     }
 
+    public static List<String> getNamesOfTeamsList() {
+
+        List<String> namesOfTeamsList = new ArrayList<>();
+        namesOfTeamsList.add("1");
+        namesOfTeamsList.add("RW");
+        namesOfTeamsList.add("Dgfhrytgjhjjhnhffrtrrytytrt67uijkjgddssghg6u8iujh" +
+                "r4ee655787ikghffgfdgfssfdsrsrhjmjhjdeeebmj,jjjjkgh");
+        namesOfTeamsList.add("Dgfhrytgjhjjhnhffrtrrytytrt67uijkjgddssghg6u8iujh" +
+                "r4ee655787ikghffgfdgfssfdsrsrhjmjhjdeeebmj,jjjjkgh1");
+
+        return namesOfTeamsList;
+    }
 }
