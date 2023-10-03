@@ -12,7 +12,6 @@ import org.testng.annotations.Test;
 import pages.*;
 import services.WaitService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BoundaryValueTest extends BaseTest {
