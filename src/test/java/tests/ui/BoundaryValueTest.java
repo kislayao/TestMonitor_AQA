@@ -31,13 +31,7 @@ public class BoundaryValueTest extends BaseTest {
         AddTeamPage addTeamPage = new AddTeamPage(driver);
         WebElement input = addTeamPage.nameOfTeamInput;
 
-        List<String> namesOfTeamsList = new ArrayList<>();
-        namesOfTeamsList.add("1");
-        namesOfTeamsList.add("RW");
-        namesOfTeamsList.add("Dgfhrytgjhjjhnhffrtrrytytrt67uijkjgddssghg6u8iujh" +
-                "r4ee655787ikghffgfdgfssfdsrsrhjmjhjdeeebmj,jjjjkgh");
-        namesOfTeamsList.add("Dgfhrytgjhjjhnhffrtrrytytrt67uijkjgddssghg6u8iujh" +
-                "r4ee655787ikghffgfdgfssfdsrsrhjmjhjdeeebmj,jjjjkgh1");
+        List<String> namesOfTeamsList = DataHelper.getNamesOfTeamsList();
 
         for (int i = 0; i < namesOfTeamsList.size(); i++) {
             String value = namesOfTeamsList.get(i);
@@ -70,8 +64,7 @@ public class BoundaryValueTest extends BaseTest {
         String teamName = "";
         addTeamPage.setNameOfTeamInput(teamName);
 
-        int lengthOfTeamName = teamName.length();
-        logger.info("Length of the input value of the TeamName field is: " + lengthOfTeamName);
+        logger.info("Length of the input value of the TeamName field is: " + teamName.length());
 
         Assert.assertEquals(1, driver.findElements(By.cssSelector("button:disabled")).size());
         logger.error("You can't add Team with ZERO size of name!");
@@ -80,8 +73,7 @@ public class BoundaryValueTest extends BaseTest {
                 "r4ee655787ikghffgfdgfssfdsrsrhjmjhjdeeebmj,jjjjkgh12";
         addTeamPage.setNameOfTeamInput(teamName2);
 
-        int lengthOfTeamName2 = teamName2.length();
-        logger.info("Length of the input value of the TeamName field is: " + lengthOfTeamName2);
+        logger.info("Length of the input value of the TeamName field is: " + teamName2.length());
 
         Assert.assertNotEquals(addTeamPage.nameOfTeamInput.getText(), "Dgfhrytgjhjjhnhffrtrrytytrt67uijkjgdd" +
                 "ssghg6u8iujhr4ee655787ikghffgfdgfssfdsrsrhjmjhjdeeebmj,jjjjkgh12");

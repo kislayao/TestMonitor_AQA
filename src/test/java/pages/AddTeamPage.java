@@ -12,9 +12,6 @@ public class AddTeamPage extends BasePage {
     @FindBy(xpath = "//input[@type = 'text']")
     public WebElement nameOfTeamInput;
 
-    @FindBy(css = ".button.is-success")
-    public WebElement addButton;
-
     @FindBy(xpath = "//button[@type = 'submit']")
     public WebElement submitAddButton;
 
@@ -34,4 +31,6 @@ public class AddTeamPage extends BasePage {
     public void setNameOfTeamInput(String value) {
         getNameOfTeamInput().sendKeys(value);
     }
+
+
 }

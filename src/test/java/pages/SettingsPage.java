@@ -49,8 +49,4 @@ public class SettingsPage extends BasePage {
     public void clickToUsersMenuLabel() {
         usersMenuLabel.click();
     }
-
-    public void clickToTeamsMenuLabel() {
-        teamsMenuLabel.click();
-    }
 }
