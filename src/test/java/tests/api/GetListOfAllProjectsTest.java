@@ -1,12 +1,12 @@
 package tests.api;
 
+import adapters.ProjectAdapter;
 import baseEntities.BaseApiTest;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import io.restassured.response.Response;
 import models.Project;
-import org.apache.http.HttpStatus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.json.TypeToken;
@@ -17,12 +17,9 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import static io.restassured.RestAssured.given;
-
 public class GetListOfAllProjectsTest extends BaseApiTest {
 
     static Logger logger = LogManager.getLogger(GetListOfAllProjectsTest.class);
-
 
     @Test
     public void getAllProjectsTest() throws FileNotFoundException {
@@ -32,16 +29,7 @@ public class GetListOfAllProjectsTest extends BaseApiTest {
         AddProjectTest expectedProject = new AddProjectTest();
         expectedProject.addProject();
 
-        String endpoint = "/api/v1/projects";
-
-        Response response = given()
-                .when()
-                .get(endpoint)
-                .then()
-                .log().body()
-                .statusCode(HttpStatus.SC_OK)
-                .extract()
-                .response();
+        Response response = new ProjectAdapter().getAllProjects();
 
         Type listType = new TypeToken<ArrayList<Project>>() {
         }.getType();
